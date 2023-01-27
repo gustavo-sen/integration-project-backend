@@ -1,3 +1,4 @@
-model\Lineup.class
 model\Models.class
+hibernate\HibernateUtil.class
+model\Lineup.class
 model\Categories.class
