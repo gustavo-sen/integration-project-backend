@@ -40,7 +40,7 @@ VALUES
     ('Ares',   'Ares TB'),
     ('Ares',   'Ares THS');
 
-INSERT INTO models_table(id_category, model_name)
+INSERT INTO model_table(id_category, model_name)
 VALUES
     ('Cronos Old', 'Cronos 6001-A'),
     ('Cronos Old', 'Cronos 6003'),
