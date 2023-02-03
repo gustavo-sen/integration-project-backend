@@ -5,3 +5,4 @@
 .idea/jpa-buddy.xml
 .idea/vcs.xml
 .idea/misc.xml
+/target/

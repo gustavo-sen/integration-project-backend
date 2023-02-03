@@ -1,5 +1,5 @@
 
-DROP TABLE IF EXISTS model_table;
+DROP TABLE IF EXISTS models_table;
 DROP TABLE IF EXISTS categories_table;
 DROP TABLE IF EXISTS lineup_table;
 
@@ -18,7 +18,7 @@ CREATE TABLE categories_table(
         ON DELETE CASCADE
 );
 
-CREATE TABLE model_table(
+CREATE TABLE models_table(
     model_name text NOT NULL,
     id_category text,
     PRIMARY KEY(model_name),
@@ -40,7 +40,7 @@ VALUES
     ('Ares',   'Ares TB'),
     ('Ares',   'Ares THS');
 
-INSERT INTO model_table(id_category, model_name)
+INSERT INTO models_table(id_category, model_name)
 VALUES
     ('Cronos Old', 'Cronos 6001-A'),
     ('Cronos Old', 'Cronos 6003'),
