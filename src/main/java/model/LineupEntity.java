@@ -7,15 +7,15 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "lineup_table")
-public class Lineup {
+public class LineupEntity {
 
     @Id
     @Column(name = "lineup_name")
     private String lineupName;
 
-    public Lineup() {}
+    public LineupEntity() {}
 
-    Lineup(String lineupName){
+    LineupEntity(String lineupName){
         this.lineupName = lineupName;
     }
 

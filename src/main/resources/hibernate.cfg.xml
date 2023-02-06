@@ -16,9 +16,9 @@
         <property name="show_sql">true</property> <!-- Show SQL in console -->
         <property name="format_sql">true</property> <!-- Show SQL formatted -->
 
-        <mapping class="model.Categories"/>
-        <mapping class="model.Lineup"/>
-        <mapping class="model.Models"/>
+        <mapping class="model.CategoriesEntity"/>
+        <mapping class="model.LineupEntity"/>
+        <mapping class="model.ModelsEntity"/>
 
     </session-factory>
 </hibernate-configuration>
