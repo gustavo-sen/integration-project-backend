@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "categories_table")
-public class CategoriesEntity {
+public class CategoryEntity {
 
     @Id
     @Column(name = "category_name")
@@ -14,8 +14,8 @@ public class CategoriesEntity {
     @JoinColumn(name = "id_lineup")
     private LineupEntity lineup;
 
-    CategoriesEntity(){}
-    CategoriesEntity(LineupEntity lineup, String name) {
+    CategoryEntity(){}
+    CategoryEntity(LineupEntity lineup, String name) {
         this.lineup = lineup;
         this.category_name = name;
     }
