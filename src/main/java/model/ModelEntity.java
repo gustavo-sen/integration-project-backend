@@ -4,18 +4,18 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "models_table")
-public class Models {
+public class ModelEntity {
 
     @Id
     @Column(name = "model_name")
     private String modelName;
     @ManyToOne
     @JoinColumn(name = "id_category")
-    private Categories categories;
+    private CategoryEntity categories;
 
-    public Models() {}
+    public ModelEntity() {}
 
-    Models(Categories categories, String modelName) {
+    ModelEntity(CategoryEntity categories, String modelName) {
         this.categories = categories;
         this.modelName = modelName;
     }
@@ -25,7 +25,7 @@ public class Models {
         return modelName;
     }
 
-    public Categories getCategories() {
+    public CategoryEntity getCategories() {
         return categories;
     }
 }

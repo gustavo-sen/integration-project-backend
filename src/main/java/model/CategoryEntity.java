@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "categories_table")
-public class Categories {
+public class CategoryEntity {
 
     @Id
     @Column(name = "category_name")
@@ -12,10 +12,10 @@ public class Categories {
 
     @ManyToOne
     @JoinColumn(name = "id_lineup")
-    private Lineup lineup;
+    private LineupEntity lineup;
 
-    Categories(){}
-    Categories(Lineup lineup, String name) {
+    CategoryEntity(){}
+    CategoryEntity(LineupEntity lineup, String name) {
         this.lineup = lineup;
         this.category_name = name;
     }
@@ -25,7 +25,7 @@ public class Categories {
         return category_name;
     }
 
-    public Lineup getLineup() {
+    public LineupEntity getLineup() {
         return lineup;
     }
 }
