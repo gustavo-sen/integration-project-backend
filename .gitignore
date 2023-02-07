@@ -6,3 +6,5 @@
 .idea/vcs.xml
 .idea/misc.xml
 /target/
+/.idea/
+/target/
