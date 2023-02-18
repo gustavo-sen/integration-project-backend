@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "lineup_table")
-public class LineupEntity {
+public class LineupEntity implements IEntity {
 
     @Id
     @Column(name = "lineup_name")

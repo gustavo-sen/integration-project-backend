@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "categories_table")
-public class CategoryEntity {
+public class CategoryEntity implements IEntity {
 
     @Id
     @Column(name = "category_name")

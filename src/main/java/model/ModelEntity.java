@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "models_table")
-public class ModelEntity {
+public class ModelEntity implements IEntity{
 
     @Id
     @Column(name = "model_name")
