@@ -1,4 +1,4 @@
-package model;
+package com.eletra.product.api.model;
 
 import javax.persistence.*;
 

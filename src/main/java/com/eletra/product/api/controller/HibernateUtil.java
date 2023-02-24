@@ -1,6 +1,5 @@
-package util;
+package com.eletra.product.api.controller;
 
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
