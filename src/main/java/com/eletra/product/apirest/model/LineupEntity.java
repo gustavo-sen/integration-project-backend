@@ -1,4 +1,4 @@
-package com.eletra.product.api.model;
+package com.eletra.product.apirest.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,21 +7,20 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "lineup_table")
-public class LineupEntity implements IEntity {
+public class LineupEntity extends AbstractEntity {
 
-    @Id
-    @Column(name = "lineup_name")
-    private String lineupName;
+    @Column(name = "name")
+    private String name;
 
     public LineupEntity() {}
 
-    LineupEntity(String lineupName){
-        this.lineupName = lineupName;
+    LineupEntity(String name){
+        this.name = name;
     }
 
     @Override
     public String toString() {
-        return lineupName;
+        return name;
     }
 
 

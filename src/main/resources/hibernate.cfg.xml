@@ -16,9 +16,9 @@
         <property name="show_sql">true</property> <!-- Show SQL in console -->
         <property name="format_sql">true</property> <!-- Show SQL formatted -->
 
-        <mapping class="com.eletra.product.api.model.CategoryEntity"/>
-        <mapping class="com.eletra.product.api.model.LineupEntity"/>
-        <mapping class="com.eletra.product.api.model.ModelEntity"/>
+        <mapping class="com.eletra.product.apirest.model.CategoryEntity"/>
+        <mapping class="com.eletra.product.apirest.model.LineupEntity"/>
+        <mapping class="com.eletra.product.apirest.model.ModelEntity"/>
 
     </session-factory>
 </hibernate-configuration>

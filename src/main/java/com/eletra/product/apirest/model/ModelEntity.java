@@ -1,28 +1,28 @@
-package com.eletra.product.api.model;
+package com.eletra.product.apirest.model;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "models_table")
-public class ModelEntity implements IEntity{
+public class ModelEntity extends AbstractEntity{
 
-    @Id
-    @Column(name = "model_name")
-    private String modelName;
+    @Column(name = "name")
+    private String name;
+
     @ManyToOne
-    @JoinColumn(name = "id_category")
+    @JoinColumn(name = "id_model")
     private CategoryEntity categories;
 
     public ModelEntity() {}
 
-    ModelEntity(CategoryEntity categories, String modelName) {
+    ModelEntity(CategoryEntity categories, String name) {
         this.categories = categories;
-        this.modelName = modelName;
+        this.name = name;
     }
 
     @Override
     public String toString() {
-        return modelName;
+        return name;
     }
 
     public CategoryEntity getCategories() {
