@@ -9,19 +9,10 @@ import javax.persistence.Table;
 @Table(name = "lineup_table")
 public class LineupEntity extends AbstractEntity {
 
-    @Column(name = "name")
-    private String name;
-
     public LineupEntity() {}
 
     LineupEntity(String name){
-        this.name = name;
+       super(name);
     }
-
-    @Override
-    public String toString() {
-        return name;
-    }
-
 
 }

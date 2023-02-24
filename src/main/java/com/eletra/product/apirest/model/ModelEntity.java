@@ -6,23 +6,16 @@ import javax.persistence.*;
 @Table(name = "models_table")
 public class ModelEntity extends AbstractEntity{
 
-    @Column(name = "name")
-    private String name;
-
     @ManyToOne
     @JoinColumn(name = "id_model")
     private CategoryEntity categories;
 
-    public ModelEntity() {}
-
-    ModelEntity(CategoryEntity categories, String name) {
-        this.categories = categories;
-        this.name = name;
+    public ModelEntity() {
     }
 
-    @Override
-    public String toString() {
-        return name;
+    ModelEntity(CategoryEntity categories, String name) {
+        super(name);
+        this.categories = categories;
     }
 
     public CategoryEntity getCategories() {

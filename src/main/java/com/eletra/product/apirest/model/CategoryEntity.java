@@ -6,22 +6,15 @@ import javax.persistence.*;
 @Table(name = "category_table")
 public class CategoryEntity extends AbstractEntity {
 
-    @Column(name = "name")
-    private String name;
 
     @ManyToOne
-    @JoinColumn(name = "id_lineup")
+    @JoinColumn(name = "lineup_id")
     private LineupEntity lineup;
 
     CategoryEntity(){}
     CategoryEntity(LineupEntity lineup, String name) {
+        super(name);
         this.lineup = lineup;
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return name;
     }
 
     public LineupEntity getLineup() {
