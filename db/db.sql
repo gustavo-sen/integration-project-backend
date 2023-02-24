@@ -1,39 +1,38 @@
-//Sql Querry Command
 
 DROP TABLE IF EXISTS model_table;
-DROP TABLE IF EXISTS categories_table;
+DROP TABLE IF EXISTS category_table;
 DROP TABLE IF EXISTS lineup_table;
 
 
 CREATE TABLE lineup_table(
-    lineup_name text NOT NULL,
+    name text NOT NULL,
     PRIMARY KEY(name)
 );
 
-CREATE TABLE categories_table(
-    category_name text NOT NULL,
-    id_lineup text,
+CREATE TABLE category_table(
+    name text NOT NULL,
+    lineup_id text,
     PRIMARY KEY(name),
-    FOREIGN KEY(line_id)
+    FOREIGN KEY(lineup_id)
         REFERENCES lineup_table (name)
         ON DELETE CASCADE
 );
 
 CREATE TABLE model_table(
-    model_name text NOT NULL,
-    id_category text,
+    name text NOT NULL,
+    category_id text,
     PRIMARY KEY(name),
     FOREIGN KEY(category_id)
-        REFERENCES categories_table (name)
+        REFERENCES category_table (name)
         ON DELETE CASCADE
 );
 
-INSERT INTO lineup_table (lineup_name)
+INSERT INTO lineup_table (name)
 VALUES
 	('Ares'),
 	('Cronos');
 
-INSERT INTO categories_table (id_lineup, category_name)
+INSERT INTO category_table (lineup_id, name)
 VALUES
     ('Cronos', 'Cronos Old'),
     ('Cronos', 'Cronos L'),
@@ -41,7 +40,7 @@ VALUES
     ('Ares',   'Ares TB'),
     ('Ares',   'Ares THS');
 
-INSERT INTO models_table(id_category, model_name)
+INSERT INTO model_table(category_id, name)
 VALUES
     ('Cronos Old', 'Cronos 6001-A'),
     ('Cronos Old', 'Cronos 6003'),
