@@ -21,4 +21,7 @@ public class CategoryEntity extends AbstractEntity {
         return lineup;
     }
 
+    public void setLineup(LineupEntity lineup) {
+        this.lineup = lineup;
+    }
 }

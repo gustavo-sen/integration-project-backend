@@ -3,22 +3,25 @@ package com.eletra.product.apirest.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "models_table")
+@Table(name = "model_table")
 public class ModelEntity extends AbstractEntity{
 
     @ManyToOne
-    @JoinColumn(name = "id_model")
-    private CategoryEntity categories;
+    @JoinColumn(name = "category_id")
+    private CategoryEntity category;
 
-    public ModelEntity() {
-    }
+    public ModelEntity() {}
 
-    ModelEntity(CategoryEntity categories, String name) {
+    ModelEntity(CategoryEntity category, String name) {
         super(name);
-        this.categories = categories;
+        this.category = category;
     }
 
     public CategoryEntity getCategories() {
-        return categories;
+        return category;
+    }
+
+    public void setCategories(CategoryEntity category) {
+        this.category = category;
     }
 }

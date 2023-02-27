@@ -1,4 +1,7 @@
 package com.eletra.product.apirest.repository;
 
-public interface IModel {
+import com.eletra.product.apirest.model.ModelEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface IModel extends JpaRepository<ModelEntity,String> {
 }
