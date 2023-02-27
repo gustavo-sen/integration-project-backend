@@ -3,10 +3,7 @@ package com.eletra.product.apirest.controller;
 import com.eletra.product.apirest.model.CategoryEntity;
 import com.eletra.product.apirest.repository.ICategory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,7 +12,7 @@ import java.util.List;
 public class CategoryResource {
 
     @Autowired
-    ICategory iCategory;
+    private ICategory iCategory;
 
     @GetMapping("/categories")
     public List<CategoryEntity> categoryEntityList(){
@@ -27,4 +24,12 @@ public class CategoryResource {
         return  iCategory.findByNameIgnoreCase(name);
     }
 
+    @PostMapping("/categories")
+    public CategoryEntity saveEntity(@RequestBody CategoryEntity category){
+        return iCategory.save(category);
+    }
+    @DeleteMapping("/categories")
+    public void deleteEntity(@RequestBody CategoryEntity category){
+        iCategory.delete(category);
+    }
 }
