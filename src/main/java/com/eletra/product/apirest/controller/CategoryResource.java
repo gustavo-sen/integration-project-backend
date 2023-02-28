@@ -18,7 +18,7 @@ public class CategoryResource {
     @Autowired
     private ICategory iCategory;
 
-    @ApiOperation(value = "Retorna uma lista de entidades")
+    @ApiOperation(value = "Return an list of entities ")
     @GetMapping("/categories")
     public List<CategoryEntity> categoryEntityList(){
         return  iCategory.findAll();
@@ -30,16 +30,19 @@ public class CategoryResource {
         return  iCategory.findByNameIgnoreCase(name);
     }
 
+    @ApiOperation(value = "Save an given entity (this methos is disabled)")
     @PostMapping("/categories")
     public CategoryEntity saveEntity(@RequestBody CategoryEntity category){
         return iCategory.save(category);
     }
 
+    @ApiOperation(value = "delete an specific entity by name")
     @DeleteMapping("/categories")
     public void deleteEntity(@RequestBody CategoryEntity category){
         iCategory.delete(category);
     }
 
+    @ApiOperation(value = "update an specific entity (this methos is disabled)")
     @PutMapping("/categories")
     public CategoryEntity updateEntity(@RequestBody CategoryEntity category){
         return iCategory.save(category);

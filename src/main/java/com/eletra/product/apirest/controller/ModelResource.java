@@ -22,11 +22,11 @@ public class ModelResource {
 
 
     //Get list of models
-    @ApiOperation(value = "Retorna uma lista de entidades")
+    @ApiOperation(value = "Return a list of entities ")
     @GetMapping("/models")
     public List<ModelEntity> modelEntityList(){ return  iModel.findAll(); }
 
-    //get a model by name
+    @ApiOperation(value = "Return an specific entity by name")
     @GetMapping("/models/{name}")
     public ModelEntity modelEntity(@PathVariable(value = "name") String name){
         return  iModel.findByNameIgnoreCase(name);
@@ -43,6 +43,7 @@ public class ModelResource {
         iModel.delete(models);
     }
 
+    @ApiOperation(value = "update an specific entity (this methos is disabled)")
     @PutMapping("/models")
     public void updateEntity(@RequestBody ModelEntity models){
         iModel.save(models);
