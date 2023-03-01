@@ -18,9 +18,15 @@ public class LineupResource {
     @Autowired
     ILineup iLineup;
 
-    @ApiOperation(value = "Return an specific entity by name")
+    @ApiOperation(value = "Return an list of Lineup")
+    @GetMapping("/lineups")
+    public List<LineupEntity> getLineups(){
+        return iLineup.findAll();
+    }
+
+    @ApiOperation(value = "Return an list of Lineup")
     @GetMapping("/lineups/{name}")
-    public LineupEntity lineupEntity(@PathVariable(value = "name") String name){
-        return  iLineup.findByNameIgnoreCase(name);
+    public LineupEntity findByNameIgnoreCase(@PathVariable(value = "name") String name){
+        return iLineup.findByNameIgnoreCase(name);
     }
 }

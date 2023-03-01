@@ -20,15 +20,9 @@ public class ModelResource {
     @Autowired
     IModel iModel;
 
-    @ApiOperation(value = "Return an specific entity by name")
-    @GetMapping("/models/{name}")
-    public ModelEntity modelEntity(@PathVariable(value = "name") String name){
-        return  iModel.findByNameIgnoreCase(name);
-    }
-
-    @ApiOperation(value = "Return an specific entity by name")
+    @ApiOperation(value = "Return an list of Model of an specific Category")
     @GetMapping("/models/{categoryName}")
-    public List<ModelEntity> modelEntityByCategory(@PathVariable(value = "categoryName") String categoryName){
+    public List<ModelEntity> findByCategoryNameIgnoreCase(@PathVariable(value = "categoryName") String categoryName){
         return  iModel.findByCategoryNameIgnoreCase(categoryName);
     }
 

@@ -7,6 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface IModel extends JpaRepository<ModelEntity,String> {
-    ModelEntity findByNameIgnoreCase(String name);
     List<ModelEntity> findByCategoryNameIgnoreCase(String categoryName);
 }
