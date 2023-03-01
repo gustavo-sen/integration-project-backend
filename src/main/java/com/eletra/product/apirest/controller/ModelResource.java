@@ -20,35 +20,16 @@ public class ModelResource {
     @Autowired
     IModel iModel;
 
-
-    //Get list of models
-    @ApiOperation(value = "Return a list of entities ")
-    @GetMapping("/models")
-    public List<ModelEntity> modelEntityList(){ return  iModel.findAll(); }
-
     @ApiOperation(value = "Return an specific entity by name")
     @GetMapping("/models/{name}")
     public ModelEntity modelEntity(@PathVariable(value = "name") String name){
         return  iModel.findByNameIgnoreCase(name);
     }
 
-    //Post Method
-    @PostMapping("/models")
-    public ModelEntity saveEntity(@RequestBody ModelEntity models){
-        return iModel.save(models);
+    @ApiOperation(value = "Return an specific entity by name")
+    @GetMapping("/models/{categoryName}")
+    public List<ModelEntity> modelEntityByCategory(@PathVariable(value = "categoryName") String categoryName){
+        return  iModel.findByCategoryNameIgnoreCase(categoryName);
     }
-
-    @DeleteMapping("/models")
-    public void deleteEntity(@RequestBody ModelEntity models){
-        iModel.delete(models);
-    }
-
-    @ApiOperation(value = "update an specific entity (this methos is disabled)")
-    @PutMapping("/models")
-    public void updateEntity(@RequestBody ModelEntity models){
-        iModel.save(models);
-    }
-
-
 
 }

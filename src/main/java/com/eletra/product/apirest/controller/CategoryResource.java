@@ -18,33 +18,16 @@ public class CategoryResource {
     @Autowired
     private ICategory iCategory;
 
-    @ApiOperation(value = "Return an list of entities ")
-    @GetMapping("/categories")
-    public List<CategoryEntity> categoryEntityList(){
-        return  iCategory.findAll();
-    }
-
     @ApiOperation(value = "Return an specific entity by name")
     @GetMapping("/categories/{name}")
     public CategoryEntity categoryEntity(@PathVariable(value = "name") String name){
         return  iCategory.findByNameIgnoreCase(name);
     }
 
-    @ApiOperation(value = "Save an given entity (this methos is disabled)")
-    @PostMapping("/categories")
-    public CategoryEntity saveEntity(@RequestBody CategoryEntity category){
-        return iCategory.save(category);
+    @ApiOperation(value = "Return an specific entity by name")
+    @GetMapping("/categories/{lineupName}")
+    public List<CategoryEntity> findCategoryEntityByLineupName(@PathVariable(value = "lineupName") String lineupName){
+        return  iCategory.findCategoryEntityByLineupName(lineupName);
     }
 
-    @ApiOperation(value = "delete an specific entity by name")
-    @DeleteMapping("/categories")
-    public void deleteEntity(@RequestBody CategoryEntity category){
-        iCategory.delete(category);
-    }
-
-    @ApiOperation(value = "update an specific entity (this methos is disabled)")
-    @PutMapping("/categories")
-    public CategoryEntity updateEntity(@RequestBody CategoryEntity category){
-        return iCategory.save(category);
-    }
 }
