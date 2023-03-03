@@ -32,8 +32,14 @@ public class LineupResource {
 
     @ApiOperation(value = "Save a new Lineup")
     @PutMapping("/lineups")
-    public LineupEntity saveLineupByNameIgnoreCase(@RequestBody LineupEntity lineupEntity){
+    public LineupEntity saveLineup(@RequestBody LineupEntity lineupEntity){
         return iLineup.save(lineupEntity);
+    }
+
+    @ApiOperation(value = "Save a new Lineup")
+    @DeleteMapping("/lineups")
+    public void deleteLineup(@RequestBody LineupEntity lineupEntity){
+        iLineup.delete(lineupEntity);
     }
 
 }

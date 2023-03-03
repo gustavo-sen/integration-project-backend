@@ -27,7 +27,14 @@ public class CategoryResource {
 
     @ApiOperation(value = "Save a new category")
     @PutMapping("/categories")
-    public CategoryEntity saveCategoryByNameIgnoreCase(@RequestBody CategoryEntity categoryEntity){
+    public CategoryEntity saveNewCategory(@RequestBody CategoryEntity categoryEntity){
         return iCategory.save(categoryEntity);
     }
+
+    @ApiOperation(value = "Save a new category")
+    @PutMapping("/categories")
+    public void deleteCategory(@RequestBody CategoryEntity categoryEntity){
+        iCategory.delete(categoryEntity);
+    }
+
 }

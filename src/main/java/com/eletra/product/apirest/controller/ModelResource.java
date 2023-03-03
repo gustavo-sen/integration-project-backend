@@ -27,8 +27,13 @@ public class ModelResource {
     }
     @ApiOperation(value = "Save a new Model")
     @PutMapping("/model")
-    public ModelEntity addLineupByNameIgnoreCase(@RequestBody ModelEntity modelEntity){
+    public ModelEntity saveNewModel(@RequestBody ModelEntity modelEntity){
         return iModel.save(modelEntity);
     }
 
+    @ApiOperation(value = "Save a new Model")
+    @PutMapping("/model")
+    public void deleteModel(@RequestBody ModelEntity modelEntity){
+        iModel.delete(modelEntity);
+    }
 }
