@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface ICategory extends JpaRepository<CategoryEntity,String> {
-    List<CategoryEntity> findCategoryEntityByLineupNameIgnoreCase(String lineupName);
+    List<CategoryEntity> findCategoryEntityByLineupNameIgnoreCase(String categoryName);
 }
 

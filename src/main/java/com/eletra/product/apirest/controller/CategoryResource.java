@@ -20,19 +20,19 @@ public class CategoryResource {
     private ICategory iCategory;
 
     @ApiOperation(value = "Return an list of Categories of an specific Lineup")
-    @GetMapping("/categories/{lineupName}")
-    public List<CategoryEntity> findCategoryEntityByLineupNameIgnoreCase(@PathVariable(value = "lineupName") String lineupName){
-        return  iCategory.findCategoryEntityByLineupNameIgnoreCase(lineupName);
+    @GetMapping("/categories/{categoryName}")
+    public List<CategoryEntity> findCategoryEntityByLineupNameIgnoreCase(@PathVariable(value = "categoryName") String categoryName){
+        return  iCategory.findCategoryEntityByLineupNameIgnoreCase(categoryName);
     }
 
     @ApiOperation(value = "Save a new category")
     @PutMapping("/categories")
-    public CategoryEntity saveNewCategory(@RequestBody CategoryEntity categoryEntity){
+    public CategoryEntity saveCategory(@RequestBody CategoryEntity categoryEntity){
         return iCategory.save(categoryEntity);
     }
 
     @ApiOperation(value = "Save a new category")
-    @PutMapping("/categories")
+    @DeleteMapping("/categories")
     public void deleteCategory(@RequestBody CategoryEntity categoryEntity){
         iCategory.delete(categoryEntity);
     }

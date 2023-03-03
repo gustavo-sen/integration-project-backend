@@ -32,7 +32,7 @@ public class ModelResource {
     }
 
     @ApiOperation(value = "Save a new Model")
-    @PutMapping("/model")
+    @DeleteMapping("/model")
     public void deleteModel(@RequestBody ModelEntity modelEntity){
         iModel.delete(modelEntity);
     }
