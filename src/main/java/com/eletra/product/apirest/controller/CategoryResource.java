@@ -1,6 +1,7 @@
 package com.eletra.product.apirest.controller;
 
 import com.eletra.product.apirest.model.CategoryEntity;
+import com.eletra.product.apirest.model.LineupEntity;
 import com.eletra.product.apirest.repository.ICategory;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -24,4 +25,9 @@ public class CategoryResource {
         return  iCategory.findCategoryEntityByLineupNameIgnoreCase(lineupName);
     }
 
+    @ApiOperation(value = "Save a new category")
+    @PutMapping("/categories")
+    public CategoryEntity saveCategoryByNameIgnoreCase(@RequestBody CategoryEntity categoryEntity){
+        return iCategory.save(categoryEntity);
+    }
 }

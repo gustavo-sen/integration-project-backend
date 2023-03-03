@@ -29,4 +29,11 @@ public class LineupResource {
     public LineupEntity findByNameIgnoreCase(@PathVariable(value = "name") String name){
         return iLineup.findByNameIgnoreCase(name);
     }
+
+    @ApiOperation(value = "Save a new Lineup")
+    @PutMapping("/lineups")
+    public LineupEntity saveLineupByNameIgnoreCase(@RequestBody LineupEntity lineupEntity){
+        return iLineup.save(lineupEntity);
+    }
+
 }

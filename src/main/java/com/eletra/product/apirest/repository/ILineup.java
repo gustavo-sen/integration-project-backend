@@ -9,4 +9,5 @@ import java.util.List;
 public interface ILineup extends JpaRepository<LineupEntity,String> {
     List<LineupEntity> findAll();
     LineupEntity findByNameIgnoreCase(String name);
+    LineupEntity save(LineupEntity lineupEntity);
 }

@@ -25,5 +25,10 @@ public class ModelResource {
     public List<ModelEntity> findByCategoryNameIgnoreCase(@PathVariable(value = "categoryName") String categoryName){
         return  iModel.findByCategoryNameIgnoreCase(categoryName);
     }
+    @ApiOperation(value = "Save a new Model")
+    @PutMapping("/model")
+    public ModelEntity addLineupByNameIgnoreCase(@RequestBody ModelEntity modelEntity){
+        return iModel.save(modelEntity);
+    }
 
 }
