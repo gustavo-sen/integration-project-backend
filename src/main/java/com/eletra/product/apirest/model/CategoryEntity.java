@@ -1,27 +1,30 @@
 package com.eletra.product.apirest.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name = "category_table")
-public class CategoryEntity extends AbstractEntity {
+@Table(name = "categories_table")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class CategoryEntity {
 
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Short id;
 
     @ManyToOne
-    @JoinColumn(name = "lineup_id")
+    @JoinColumn(name = "lineup_id", referencedColumnName = "id")
     private LineupEntity lineup;
 
-    CategoryEntity(){}
-    CategoryEntity(LineupEntity lineup, String name) {
-        super(name);
-        this.lineup = lineup;
-    }
+    @Column(name = "name")
+    private String name;
 
-    public LineupEntity getLineup() {
-        return lineup;
-    }
-
-    public void setLineup(LineupEntity lineup) {
-        this.lineup = lineup;
-    }
 }

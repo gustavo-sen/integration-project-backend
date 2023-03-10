@@ -1,0 +1,5 @@
+INSERT INTO lineup_table ("name")
+VALUES
+
+    ('Ares'),
+    ('Cronos');

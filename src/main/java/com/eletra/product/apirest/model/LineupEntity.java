@@ -1,17 +1,26 @@
 package com.eletra.product.apirest.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "lineup_table")
-public class LineupEntity extends AbstractEntity {
-    
-    public LineupEntity() {}
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class LineupEntity {
 
-    LineupEntity(String name){
-       super(name);
-    }
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Short id;
+
+    @Column(name = "name")
+    private String name;
 
 }
