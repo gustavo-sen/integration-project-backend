@@ -1,12 +1,18 @@
 package com.eletra.product.apirest.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "categories_table")
 @NoArgsConstructor
+@Getter
+@Setter
+@AllArgsConstructor
 public class CategoryEntity {
 
     @Id
