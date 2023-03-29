@@ -20,9 +20,9 @@ public class CategoryResource {
     private ICategory iCategory;
 
     @ApiOperation(value = "Return an list of Categories of an specific Lineup")
-    @GetMapping("/categories/{categoryName}")
-    public List<CategoryEntity> findCategoryEntityByLineupNameIgnoreCase(@PathVariable(value = "categoryName") String categoryName){
-        return  iCategory.findCategoryEntityByLineupNameIgnoreCase(categoryName);
+    @GetMapping("/categories/{lineupName}")
+    public List<CategoryEntity> findCategoryEntityByLineupNameIgnoreCase(@PathVariable(value = "lineupName") String lineupName){
+        return  iCategory.findCategoryEntityByLineupNameIgnoreCase(lineupName);
     }
 
     @ApiOperation(value = "Save a new category")
